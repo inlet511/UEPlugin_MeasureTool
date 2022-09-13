@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-MeasureTool.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"F:\UEProjects\MeasureToolProj\Intermediate\Build\Win64\MeasureToolProjEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Intermediate\Build\Win64\UE4Editor\Development\MeasureTool\Module.MeasureTool.cpp.obj"
+"F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Intermediate\Build\Win64\UE4Editor\Development\MeasureTool\Module.MeasureTool.gen.cpp.obj"
+"F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Intermediate\Build\Win64\UE4Editor\Development\MeasureTool\Default.rc2.res"
+/OUT:"F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Intermediate\Build\Win64\UE4Editor\Development\MeasureTool\UE4Editor-MeasureTool.lib"
+/INCLUDE:IMPLEMENT_MODULE_MeasureTool

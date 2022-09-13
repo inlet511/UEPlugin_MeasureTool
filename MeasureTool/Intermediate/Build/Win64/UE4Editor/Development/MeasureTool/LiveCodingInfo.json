@@ -1,0 +1,18 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.MeasureTool.cpp.obj": [
+			"AnnotationTool.cpp.obj",
+			"CommonStructures.cpp.obj",
+			"MeasureTool.cpp.obj",
+			"MeasureToolEdMode.cpp.obj",
+			"MeasureToolEdModeToolkit.cpp.obj",
+			"ObjectRulerTool.cpp.obj",
+			"PointRulerTool.cpp.obj"
+		],
+		"Module.MeasureTool.gen.cpp.obj": [
+			"CommonStructures.gen.cpp.obj",
+			"MeasureTool.init.gen.cpp.obj"
+		]
+	}
+}
