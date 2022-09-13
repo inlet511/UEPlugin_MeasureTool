@@ -20,6 +20,8 @@ void FObjectRulerTool::RenderAllMeasures(const FSceneView* View, FViewport* View
 void FObjectRulerTool::DrawText(FEditorViewportClient* ViewportClient, FViewport* Viewport, const FSceneView* View, FCanvas* Canvas)
 {
 	UFont* RenderFont = GEngine->GetSmallFont();
+	float DPIScale = Canvas->GetDPIScale();
+	
 	for (auto Measure : Measures)
 	{
 		if (Canvas&&Measures.Num() != 0)
@@ -27,15 +29,13 @@ void FObjectRulerTool::DrawText(FEditorViewportClient* ViewportClient, FViewport
 			FVector TextPos = (Measure->StartLocation + Measure->EndLocation) * 0.5f;
 			float distance = FVector::Distance(Measure->StartLocation, Measure->EndLocation);
 			
-			FVector4 ScreenPos = View->WorldToScreen(TextPos);
-			FIntPoint ViewportSize = Viewport->GetSizeXY();
-
-			UE_LOG(LogTemp, Warning, TEXT("ScreePos:%f,%f, ViewportSize:%f,%f"), ScreenPos.X, ScreenPos.Y, (float)ViewportSize.X, (float)ViewportSize.Y);
+			FVector2D PixelPos;
+			View->WorldToPixel(TextPos, PixelPos);
 			
-			FString DrawString(FString::SanitizeFloat(distance) + TEXT(" cm"));
+			FString DrawString(FString::SanitizeFloat((int)(distance * 100 + 0.5)/100.0) + TEXT(" cm"));
 			Canvas->DrawShadowedText(
-				ViewportSize.X * ScreenPos.X,
-				ViewportSize.Y * ScreenPos.Y,
+				PixelPos.X/DPIScale,
+				PixelPos.Y/DPIScale,
 				FText::FromString(DrawString),
 				RenderFont,
 				FColor::Orange);

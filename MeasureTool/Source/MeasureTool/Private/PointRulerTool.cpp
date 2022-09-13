@@ -160,6 +160,8 @@ bool FPointRulerTool::HandleClick(FEditorViewportClient* InViewportClient, HHitP
 void FPointRulerTool::DrawText(FEditorViewportClient* ViewportClient, FViewport* Viewport, const FSceneView* View, FCanvas* Canvas)
 {
 	UFont* RenderFont = GEngine->GetSmallFont();
+	float DPIScale = Canvas->GetDPIScale();
+	
 	for (auto Measure : Measures)
 	{
 		if (Canvas&&Measures.Num() != 0)
@@ -168,11 +170,12 @@ void FPointRulerTool::DrawText(FEditorViewportClient* ViewportClient, FViewport*
 			float distance = FVector::Distance(Measure->StartLocation, Measure->EndLocation);
 			
 			FString DrawString(FString::SanitizeFloat((int)(distance * 100 + 0.5)/100.0) + TEXT(" cm"));
-			FVector2D PixelLocation;
-			View->ScreenToPixel(View->WorldToScreen(TextPos/2.0f), PixelLocation);
+			FVector2D PixelPos;
+            View->WorldToPixel(TextPos, PixelPos);
+            
 			Canvas->DrawShadowedText(
-				PixelLocation.X,
-				PixelLocation.Y,
+				PixelPos.X/DPIScale,
+				PixelPos.Y/DPIScale,
 				FText::FromString(DrawString),
 				RenderFont,
 				FColor::Cyan);

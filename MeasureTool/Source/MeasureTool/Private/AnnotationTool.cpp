@@ -25,15 +25,19 @@ void FAnnotationTool::RenderAllAnnotations(const FSceneView* View, FViewport* Vi
 void FAnnotationTool::DrawText(FEditorViewportClient* ViewportClient, FViewport* Viewport, const FSceneView* View, FCanvas* Canvas)
 {
 	UFont* RenderFont = GEngine->GetSmallFont();
+	float DPIScale = Canvas->GetDPIScale();
+	
 	for (auto anno : Annotations)
 	{
 		if (Canvas&&Annotations.Num() != 0)
 		{
-			FVector2D PixelLocation;
-			View->ScreenToPixel(View->WorldToScreen(anno->ShowTextPos), PixelLocation);
+
+			FVector2D PixelPos;
+			View->WorldToPixel(anno->ShowTextPos, PixelPos);
+			
 			Canvas->DrawShadowedText(
-				PixelLocation.X,
-				PixelLocation.Y,
+				PixelPos.X/DPIScale,
+				PixelPos.Y/DPIScale,
 				anno->AnnotationContent,
 				RenderFont,
 				FColor::Purple);
