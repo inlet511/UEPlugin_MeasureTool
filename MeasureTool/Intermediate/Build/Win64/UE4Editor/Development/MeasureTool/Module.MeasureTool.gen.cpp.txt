@@ -1,7 +1,0 @@
-F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Intermediate\Build\Win64\UE4Editor\Development\MeasureTool\Definitions.MeasureTool.h
-F:/UEProjects/MeasureToolProj/Plugins/MeasureTool/Intermediate/Build/Win64/UE4Editor/Inc/MeasureTool/CommonStructures.gen.cpp
-C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Source\MeasureTool/Public/CommonStructures.h
-F:\UEProjects\MeasureToolProj\Plugins\MeasureTool\Intermediate\Build\Win64\UE4Editor\Inc\MeasureTool\CommonStructures.generated.h
-F:/UEProjects/MeasureToolProj/Plugins/MeasureTool/Intermediate/Build/Win64/UE4Editor/Inc/MeasureTool/MeasureTool.init.gen.cpp

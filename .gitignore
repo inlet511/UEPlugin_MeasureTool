@@ -70,5 +70,8 @@ Saved/*
 Intermediate/*
 Plugins/*/Intermediate/*
 
+MeasureTool/Intermediate/*
+MeasureTool/Binaries/*
+
 # Cache files for the editor to use
 DerivedDataCache/*
